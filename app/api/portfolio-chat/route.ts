@@ -9,9 +9,9 @@ export async function POST(request: Request) {
     const history = Array.isArray(body.history)
       ? body.history
           .slice(-6)
-          .map((item) => (typeof item === "object" && item && "text" in item && typeof item.text === "string" ? item.text : ""))
+          .map((item) => (typeof item === "object" && item && "role" in item && item.role === "user" && "text" in item && typeof item.text === "string" ? item.text : ""))
           .filter(Boolean)
-          .join(" ")
+          .join("\n")
       : "";
 
     return NextResponse.json({

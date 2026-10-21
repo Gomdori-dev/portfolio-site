@@ -20,7 +20,7 @@ type AppBuildCaseStudyProps = {
   title: Bilingual;
   summary: Bilingual;
   demoHref: string;
-  repositoryHref: string;
+  repositoryHref?: string;
   problem: Bilingual;
   goal: Bilingual;
   steps: BuildStep[];
@@ -257,7 +257,7 @@ export function AppBuildCaseStudy({
   }[language];
 
   return (
-    <main className={`min-h-screen ${colors.page}`}>
+    <main className={`min-h-screen ${colors.page} ${theme === "pote" ? "[&_h1]:text-center [&_h2]:text-center [&_h3]:text-center" : ""}`}>
       <SiteHeader />
 
       <section className={`border-b ${colors.hero}`}>
@@ -270,9 +270,9 @@ export function AppBuildCaseStudy({
               <Link href={demoHref} className={`inline-flex min-h-12 items-center gap-2 rounded-md px-5 text-sm font-black transition hover:-translate-y-0.5 ${colors.button}`}>
                 <Play className="h-4 w-4" aria-hidden="true" /> {copy.launchApp}
               </Link>
-              <a href={repositoryHref} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-md border border-black/25 px-5 text-sm font-black transition hover:-translate-y-0.5 hover:bg-white/40">
+              {repositoryHref && <a href={repositoryHref} target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center gap-2 rounded-md border border-black/25 px-5 text-sm font-black transition hover:-translate-y-0.5 hover:bg-white/40">
                 <CodeXml className="h-4 w-4" aria-hidden="true" /> GitHub
-              </a>
+              </a>}
             </div>
           </div>
           <ProductVisual theme={theme} language={language} />

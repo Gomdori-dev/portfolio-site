@@ -1,5 +1,7 @@
 "use client";
 
+import { pote } from "@/data/pote";
+
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -200,11 +202,8 @@ const projectCards = [
     label: "Product",
     title: { kr: "Pote", en: "Pote" },
     role: { kr: "웹 서비스 기획 · 데이터 자동화 · 배포 운영", en: "Product Build · Data Automation · Deployment" },
-    summary: {
-      kr: "5명 작가의 작품 98점을 탐색하고, 실제 전시 정보와 함께 취향에 맞는 작품을 발견할 수 있도록 만든 온라인 아트 갤러리입니다.",
-      en: "An online art gallery built around 98 works from five artists, helping visitors discover art through artwork exploration and real exhibition information."
-    },
-    points: { kr: ["98점 작품 카탈로그", "전시 데이터 자동화", "한국어 · 영어", "Vercel 운영"], en: ["98-work catalogue", "Exhibition automation", "Korean · English", "Vercel operations"] },
+    summary: pote.description,
+    points: { kr: pote.points.kr.split(" · "), en: pote.points.en.split(" · ") },
     href: "/projects/pote-gallery",
     liveHref: "https://potegallery.com",
     repository: "https://github.com/KimPooh/pote-gallery",
@@ -371,10 +370,10 @@ export function TargetedPortfolio({ profile, projects }: TargetedPortfolioProps)
         body: JSON.stringify({ question, language, history: messages.slice(-6) })
       });
       const data = (await response.json()) as { answer?: string };
-      const context = messages.map((message) => message.text).join(" ");
+      const context = messages.filter((message) => message.role === "user").map((message) => message.text).join("\n");
       return data.answer || getPortfolioAnswer(question, language, context);
     } catch {
-      return getPortfolioAnswer(question, language, messages.map((message) => message.text).join(" "));
+      return getPortfolioAnswer(question, language, messages.filter((message) => message.role === "user").map((message) => message.text).join("\n"));
     }
   };
 

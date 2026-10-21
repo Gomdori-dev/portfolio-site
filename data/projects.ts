@@ -1,3 +1,4 @@
+import { pote } from "./pote";
 import type { Bilingual, Project } from "@/types/portfolio";
 
 const bi = (kr: string, en: string): Bilingual => ({ kr, en });
@@ -136,15 +137,9 @@ export const projects: Project[] = [
     title: bi("Pote", "Pote"),
     year: "2026",
     category: "Art Gallery Platform / Product Build / Data Automation",
-    description: bi(
-      "5명 작가의 작품 98점을 탐색하고, 실제 전시 정보와 함께 취향에 맞는 작품을 발견할 수 있도록 만든 온라인 아트 갤러리입니다.",
-      "An online art gallery built around 98 works from five artists, helping visitors discover pieces that match their taste alongside real exhibition information."
-    ),
-    outcome: bi(
-      "작품·작가 탐색부터 실제 공간 미리보기와 전시 카탈로그까지 하나의 탐색 경험으로 구현하고, Vercel에 배포·운영했습니다.",
-      "Built artwork and artist discovery, a real-room preview, and the exhibition catalogue into a single browsing experience, deployed and operated on Vercel."
-    ),
-    tags: ["Next.js", "React", "TypeScript", "KR / EN", "Vercel", "Static Data Pipeline"],
+    description: pote.description,
+    outcome: pote.outcome,
+    tags: pote.stack,
     detailHref: "/projects/pote-gallery",
     summaryCards: [
       {
@@ -160,7 +155,7 @@ export const projects: Project[] = [
         items: [
           bi("작품·작가 탐색, 검색·필터, 찜과 문의 흐름 구현", "Built artwork/artist browsing, search and filters, favorites, and an inquiry flow"),
           bi("취향 추천 퀴즈와 실제 공간 미리보기 제공", "A taste-matching quiz and a real-room preview"),
-          bi("작가 제출·관리자 검토와 전시 카탈로그 운영", "Artist submissions with admin review, plus an operating exhibition catalogue")
+          pote.features[1].body
         ]
       },
       {
@@ -168,7 +163,8 @@ export const projects: Project[] = [
         items: [
           bi("한국어·영어 전환과 작품별 언어 데이터 구조 적용", "Korean/English switching with a per-artwork bilingual data structure"),
           bi("Vercel 인프라 제약을 확인하고 GitHub Actions 기반 정적 데이터 스냅샷 파이프라인으로 전환", "Identified Vercel infrastructure limits and switched to a GitHub Actions static-snapshot data pipeline"),
-          bi("데스크톱·모바일 실브라우저 검증으로 배포 품질 관리", "Maintained deploy quality with real desktop and mobile browser verification")
+          pote.features[2].body,
+          pote.features[3].body
         ]
       }
     ]
