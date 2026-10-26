@@ -1,9 +1,11 @@
 import { pote } from "./pote";
+import { hemilyProject } from "./hemily";
 import type { Bilingual, Project } from "@/types/portfolio";
 
 const bi = (kr: string, en: string): Bilingual => ({ kr, en });
 
 export const projects: Project[] = [
+  hemilyProject,
   {
     slug: "personal-finance-manager",
     title: bi("개인 자산관리", "Personal Finance Manager"),

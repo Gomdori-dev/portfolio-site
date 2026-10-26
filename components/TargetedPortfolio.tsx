@@ -1,12 +1,13 @@
 "use client";
 
 import { pote } from "@/data/pote";
+import { hemily } from "@/data/hemily";
 
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Bot, CodeXml, Download, Mail, Phone, Send, Sparkles, X } from "lucide-react";
+import { ArrowUpRight, Bot, Download, Mail, Phone, Send, Sparkles, X } from "lucide-react";
 import { fadeInUp, staggerContainer } from "@/lib/animation";
 import { useLanguage } from "@/lib/language";
 import { getPortfolioAnswer, portfolioContact, type PortfolioLanguage } from "@/lib/portfolioChat";
@@ -26,7 +27,7 @@ const languageCopy = {
     heroBadge: "AI Solution Builder",
     projectsButton: "프로젝트 보기",
     contactButton: "연락하기",
-    profileLine: "AI/Data를 배우고 직접 만들어보는 중입니다",
+    profileLine: "AI/Data 프로젝트와 헬스케어 백엔드·인프라 인턴십을 진행하고 있습니다",
     skillsTitle: "다루는 것들",
     skillsBody: "프로젝트를 만들면서 직접 써봤거나, 지금 배우고 있는 기술만 정리했습니다.",
     archiveTitle: "바로 보기",
@@ -50,8 +51,8 @@ const languageCopy = {
     phoneLabel: "전화",
     emailLabel: "이메일",
     githubLabel: "GitHub",
-    resumeLabel: "이력서 PDF 다운로드",
-    portfolioPdfLabel: "포트폴리오 요약 PDF 다운로드"
+    resumeLabel: "기존 이력서 PDF · 인턴십 이전",
+    portfolioPdfLabel: "기존 요약 PDF · 인턴십 이전"
   },
   en: {
     heroKicker: "AI SOLUTION · DATA · WEB",
@@ -60,7 +61,7 @@ const languageCopy = {
     heroBadge: "AI Solution Builder",
     projectsButton: "View Projects",
     contactButton: "Contact Me",
-    profileLine: "Learning AI/Data by building small products",
+    profileLine: "Building AI/Data products and healthcare backend infrastructure as an intern",
     skillsTitle: "What I Use",
     skillsBody: "These are the technologies I have used in projects or am currently learning.",
     archiveTitle: "Quick Links",
@@ -84,13 +85,13 @@ const languageCopy = {
     phoneLabel: "Phone",
     emailLabel: "Email",
     githubLabel: "GitHub",
-    resumeLabel: "Download Resume PDF",
-    portfolioPdfLabel: "Download Portfolio Summary PDF"
+    resumeLabel: "Earlier Resume PDF · Before Internship",
+    portfolioPdfLabel: "Earlier Summary PDF · Before Internship"
   }
 } satisfies Record<PortfolioLanguage, Record<string, string>>;
 
 const introCards = [
-  { label: { kr: "현재", en: "Now" }, value: { kr: "AI/Data 학습 중", en: "Learning AI/Data" } },
+  { label: { kr: "현재", en: "Now" }, value: { kr: "헬스케어 인턴십", en: "Healthcare Internship" } },
   { label: { kr: "관심", en: "Focus" }, value: { kr: "AI Solution", en: "AI Solution" } },
   { label: { kr: "결과", en: "Award" }, value: { kr: "해커톤 3등", en: "Hackathon 3rd" } },
   { label: { kr: "제품", en: "Product" }, value: { kr: "StudyFlow AI", en: "StudyFlow AI" } }
@@ -107,7 +108,7 @@ const skillGroups = [
   },
   {
     title: "Serving",
-    skills: ["FastAPI", "Docker", "Redis", "AI Worker", "REST API", "Vercel"]
+    skills: ["FastAPI", "PostgreSQL", "Docker", "Redis", "AWS EC2", "Nginx", "CI/CD", "REST API", "Vercel"]
   },
   {
     title: "Frontend",
@@ -116,6 +117,11 @@ const skillGroups = [
 ];
 
 const projectCards = [
+  {
+    slug: "hemily-health", label: "Internship", title: hemily.title, role: hemily.role, summary: hemily.description,
+    points: { kr: ["개발 서버 분리", "Git 자동 배포", "인증·관리자 API", "정적 자산 전송 최적화"], en: ["Separate dev server", "Git-triggered deployment", "Auth & admin APIs", "Static asset optimization"] },
+    href: "/projects/hemily-health", repository: null, processHref: null, color: "bg-[#EAF2F0]", visual: "infrastructure"
+  },
   {
     slug: "personal-finance-manager",
     label: "Product",
@@ -240,6 +246,9 @@ type ChatMessage = {
 };
 
 function ProjectVisual({ type, label }: { type: string; label: string }) {
+  if (type === "infrastructure") {
+    return <div className="h-44 rounded-md bg-[#173F3B] p-5 text-white"><p className="text-xs font-black uppercase text-[#BCE7DD]">{label}</p><p className="mt-5 text-lg font-black">Backend & Infrastructure</p><div className="mt-4 flex flex-wrap gap-2 text-xs font-bold">{["CHECK", "BUILD", "VERIFY"].map((step) => <span key={step} className="rounded border border-white/25 px-2 py-2">{step}</span>)}</div></div>;
+  }
   if (type === "finance") {
     return (
       <div className="relative h-44 overflow-hidden rounded-md bg-[#1B2233] p-5 text-white">
@@ -544,11 +553,6 @@ export function TargetedPortfolio({ profile, projects }: TargetedPortfolioProps)
                         {copy.liveButton}<span aria-hidden="true">↗</span>
                       </a>
                     ) : null}
-                    {project.repository ? (
-                      <a href={project.repository} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-3 rounded-md border border-[#9F988D] px-4 text-sm font-black transition hover:-translate-y-0.5 hover:border-[#6C5A8F] hover:text-[#6C5A8F]">
-                        {copy.repositoryButton}<span aria-hidden="true">↗</span>
-                      </a>
-                    ) : null}
                     {project.processHref ? (
                       <Link href={project.processHref} className="inline-flex min-h-11 items-center gap-3 rounded-md border border-[#6C5A8F] bg-[#E5DCF3] px-4 text-sm font-black text-[#4F3F72] transition hover:-translate-y-0.5 hover:bg-[#D5C8EA]">
                         {copy.processButton}<span aria-hidden="true">→</span>
@@ -590,16 +594,6 @@ export function TargetedPortfolio({ profile, projects }: TargetedPortfolioProps)
                 <span className="block text-xs font-black text-[#5E4E87]">{copy.emailLabel}</span>
                 <strong className="mt-1 block break-all text-sm sm:text-lg">{portfolioContact.email}</strong>
               </span>
-              <ArrowUpRight className="h-5 w-5 transition group-hover:translate-x-1" aria-hidden="true" />
-            </a>
-            <a
-              href={portfolioContact.github}
-              target="_blank"
-              rel="noreferrer"
-              className="group grid min-h-24 grid-cols-[2.5rem_1fr_auto] items-center gap-3 border-b border-[#8E82B5] px-2 transition hover:bg-[#B9E4D0]"
-            >
-              <CodeXml className="h-5 w-5 text-[#5E4E87]" aria-hidden="true" />
-              <strong className="text-base sm:text-xl">GitHub</strong>
               <ArrowUpRight className="h-5 w-5 transition group-hover:translate-x-1" aria-hidden="true" />
             </a>
             <a

@@ -6,6 +6,16 @@ import { useLanguage } from "@/lib/language";
 
 const careerTimeline = [
   {
+    period: { kr: "2026. 10 ~ 진행 중", en: "Oct 2026 – Present" },
+    duration: { kr: "헬스케어 서비스 인턴십", en: "Healthcare service internship" },
+    org: { kr: "해밀리 헬스 프로젝트", en: "Hemily Health Project" },
+    role: { kr: "팀장 · 공통 백엔드 · 인프라", en: "Team Lead · Shared Backend · Infrastructure" },
+    body: {
+      kr: "기획·기능·데이터를 대조하고 인증·관리자 API를 개선했습니다. 개발 환경 분리와 자동 배포 절차를 구축하고 정적 자산 전송 효율을 개선했습니다. 팀장·백엔드·인프라 담당으로 팀원과 API 계약·검증 결과를 조율했습니다. 진행 중인 인턴십이며 확인된 업무만 정리했습니다.",
+      en: "Compared requirements, features, and data; improved authentication and admin APIs; established a separate development environment and deployment workflow; and improved static asset transfer efficiency. Coordinated API contracts and verification results as team lead and backend/infrastructure contributor. The internship is ongoing; only verified work is summarized."
+    }
+  },
+  {
     period: { kr: "2021. 10 ~ 2022. 04", en: "Oct 2021 – Apr 2022" },
     duration: { kr: "7개월 · 서울", en: "7 months · Seoul" },
     org: { kr: "강동길동매일365한의원 · 원무과", en: "Gangdong Gildong Maeil365 Korean Medicine Clinic · Front Desk" },
@@ -67,17 +77,17 @@ const copyByLanguage = {
     title2: "데이터로",
     heroBody:
       "AI/Data를 배우기 전에는 5년간 병원 행정·인사·총무 및 고객 분쟁 조정 업무를 담당했습니다. 숫자와 문서로 현장을 정리하고 설명해야 했던 경험은, 지금 데이터로 문제를 정리하고 프로젝트로 만드는 과정과 자연스럽게 이어지고 있습니다.",
-    resumeButton: "이력서 PDF 다운로드",
-    portfolioButton: "포트폴리오 요약 PDF 다운로드",
-    careerKicker: "Career · 총 5년",
-    careerTitle: "의료기관 실무 경력",
+    resumeButton: "기존 이력서 PDF · 인턴십 이전",
+    portfolioButton: "기존 요약 PDF · 인턴십 이전",
+    careerKicker: "Career · 의료기관 5년 + 인턴십",
+    careerTitle: "헬스케어 인턴십과 의료기관 경력",
     educationKicker: "Education",
     educationTitle: "학력 · 교육",
     targetRoleKicker: "Target Role",
     targetRoleTitle: "희망 직무",
     nowKicker: "Now",
     nowTitle: "AI/Data로 이어가는 중",
-    nowBody: "의료 현장에서 쌓은 경험을 바탕으로, 지금은 Python, 머신러닝, 웹 서비스 구현을 배우며 실제 프로젝트로 연결하고 있습니다.",
+    nowBody: "의료 현장에서 쌓은 경험을 AI/Data 프로젝트와 해밀리 헬스 인턴십으로 연결하고 있습니다. 팀장·백엔드·인프라 담당으로 기능 분석, API 개선, 개발 환경·배포 검증을 수행하고 있습니다.",
     journeyButton: "학습 여정 보기",
     projectsButton: "프로젝트 보기"
   },
@@ -87,17 +97,17 @@ const copyByLanguage = {
     title2: "to data.",
     heroBody:
       "Before learning AI/Data, I spent 5 years in hospital administration, HR, general affairs, and customer dispute resolution. The experience of organizing and explaining what happens on the ground with numbers and documents now carries naturally into organizing problems with data and turning them into projects.",
-    resumeButton: "Download Resume PDF",
-    portfolioButton: "Download Portfolio Summary PDF",
-    careerKicker: "Career · 5 years total",
-    careerTitle: "Healthcare Administration Experience",
+    resumeButton: "Earlier Resume PDF · Before Internship",
+    portfolioButton: "Earlier Summary PDF · Before Internship",
+    careerKicker: "Career · 5 Years in Healthcare + Internship",
+    careerTitle: "Healthcare Internship & Administration",
     educationKicker: "Education",
     educationTitle: "Education & Training",
     targetRoleKicker: "Target Role",
     targetRoleTitle: "Target Roles",
     nowKicker: "Now",
     nowTitle: "Carrying It Into AI/Data",
-    nowBody: "Building on the experience from healthcare, I'm now learning Python, machine learning, and web implementation and connecting them to real projects.",
+    nowBody: "I connect healthcare experience with AI/Data products and the Hemily Health internship, leading shared backend and infrastructure work across analysis, APIs, development environments, and release verification.",
     journeyButton: "See the Learning Journey",
     projectsButton: "See Projects"
   }

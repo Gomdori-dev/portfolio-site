@@ -24,6 +24,7 @@ export function getPortfolioAnswer(question: string, language: PortfolioLanguage
   const text = normalize(original);
   const isEnglish = language === "en";
   const projectKeywordGroups = [
+    ["해밀리", "hemily", "인턴십", "인턴쉽", "internship"],
     ["난임", "임신성공", "catboost", "lightgbm", "oofauc", "이거조"],
     ["폐렴", "xray", "x-ray", "redisqueue", "aiworker", "백오피스"],
     ["흡연", "비흡연", "건강검진", "ttest", "anova", "중성지방"],
@@ -44,8 +45,23 @@ export function getPortfolioAnswer(question: string, language: PortfolioLanguage
 
   if (!original) {
     return isEnglish
-      ? "Ask about Jihyun, the six projects, Pote and app build decisions, skills, award, or contact details."
-      : "김지현 소개, 여섯 프로젝트, Pote·앱 제작 과정, 기술 스택, 수상 기록과 연락처를 물어보세요.";
+      ? "Ask about Jihyun, the portfolio projects, Pote and app build decisions, skills, award, or contact details."
+      : "김지현 소개, 프로젝트와 해밀리 인턴십, Pote·앱 제작 과정, 기술 스택, 수상 기록과 연락처를 물어보세요.";
+  }
+
+  if (hasAny(subjectText, ["해밀리", "hemily", "인턴십", "인턴쉽", "internship"])) {
+    if (hasAny(text, ["성능", "속도", "수치", "performance", "speed", "metric"])) return isEnglish
+      ? "Jihyun improved static asset transfer efficiency and compared results before and after the change. Internal metrics are excluded from this public portfolio; whole-service latency improvements are not claimed."
+      : "정적 자산 압축을 적용해 전송 효율을 개선하고 변경 전후 결과를 비교했습니다. 회사 내부 수치는 공개하지 않으며, 측정하지 않은 전체 서비스 응답 속도 개선을 주장하지 않습니다.";
+    if (hasAny(text, ["rag", "챗봇", "팀원", "혼자", "alone"])) return isEnglish
+      ? "A teammate owned the AI implementation. Jihyun contributed deployment review, infrastructure support, and result verification. Codex supported analysis notes and Claude assisted implementation and tests."
+      : "AI 기능의 내부 구현은 팀원이 담당했고, 김지현은 배포 검토·인프라 지원·결과 확인을 맡았습니다. Codex를 활용한 분석 정리와 Claude를 활용한 구현·테스트 보조를 함께 기록했습니다.";
+    if (hasAny(text, ["운영", "배포", "완료", "구조", "production", "deploy", "architecture"])) return isEnglish
+      ? "Jihyun established a separate development environment and automated deployment, checking builds, backups, and health status. Internal architecture and operational release details are excluded; development verification and production release are tracked separately."
+      : "개발 환경 분리와 자동 배포 절차를 구축하고 빌드·백업·상태 확인을 검증했습니다. 내부 배포 구조와 운영 세부 상태는 공개하지 않으며, 개발 확인과 운영 반영을 구분해 관리했습니다.";
+    return isEnglish
+      ? "In the ongoing Hemily Health internship, Jihyun leads shared backend and infrastructure work: requirements/API/data comparisons, authentication and admin API improvements, development environment separation, automated deployment, and static asset optimization. The public case study focuses on responsibilities and verified outcomes."
+      : "해밀리 헬스 인턴십에서 팀장·공통 백엔드·인프라를 담당합니다. 기획·API·데이터 대조, 인증·관리자 API 개선, 개발 환경 분리, 자동 배포와 정적 자산 전송 최적화를 수행했습니다. 공개 사례는 담당 역할과 확인된 결과를 중심으로 정리했습니다.";
   }
 
   const isPote = hasAny(subjectText, ["pote", "peto", "포테", "포트는", "포트가", "포트를", "포트의", "포트갤러리", "portgallery", "potegallery", "작품갤러리", "공간미리보기"]);
@@ -59,8 +75,8 @@ export function getPortfolioAnswer(question: string, language: PortfolioLanguage
 
   if (hasAny(text, ["뭘물어", "무엇을물어", "뭐할수", "도와줄", "사용법", "help", "whatcanyoudo"])) {
     return isEnglish
-      ? "I can cover profile details, skills, education, six projects, Pote, the 0.74236 hackathon result, StudyFlow and ARTE build decisions, and contact links."
-      : "소개, 기술과 교육, 여섯 프로젝트, Pote·StudyFlow·ARTE 제작 판단, 난임 해커톤 점수 0.74236, 연락처를 답할 수 있습니다.";
+      ? "I can cover profile details, skills, education, portfolio projects, Pote, the 0.74236 hackathon result, StudyFlow and ARTE build decisions, and contact links."
+      : "소개, 기술과 교육, 프로젝트와 해밀리 인턴십, Pote·StudyFlow·ARTE 제작 판단, 난임 해커톤 점수 0.74236, 연락처를 답할 수 있습니다.";
   }
 
   const personalAnswers: string[] = [];
@@ -158,20 +174,20 @@ export function getPortfolioAnswer(question: string, language: PortfolioLanguage
 
   if (hasAny(text, ["이력서", "resume", "cv", "포트폴리오pdf", "포트폴리오다운로드", "portfoliopdf", "pdf다운로드", "pdf파일"])) {
     return isEnglish
-      ? "Two downloadable PDFs are available from the Contact section or the Background page: a full resume (career history, skills, education, and target roles) and a condensed one-page portfolio summary (skills and project highlights)."
-      : "다운로드 가능한 PDF는 두 가지입니다. 연락처 섹션이나 배경(Background) 페이지에서 경력·기술·학력·희망 직무가 담긴 이력서 PDF와, 기술 스택·프로젝트 요약을 담은 포트폴리오 요약 PDF를 각각 받을 수 있습니다.";
+      ? "Contact and Background offer earlier resume and portfolio-summary PDFs, prepared before the internship. For the Oct 26 internship update, read the Hemily Health case study and Background page on this website."
+      : "연락처와 배경 페이지에서 기존 이력서·포트폴리오 요약 PDF를 받을 수 있습니다. 두 PDF는 인턴십 이전 자료입니다. 10/26까지 갱신한 인턴십 내용은 웹의 해밀리 헬스 사례와 배경 페이지를 확인해주세요.";
   }
 
   if (hasAny(text, ["프로젝트", "만든것", "결과물", "포트폴리오", "대표", "작품목록", "project"])) {
     return isEnglish
-      ? "Six works are presented: Pote, StudyFlow AI, the pneumonia back office, the infertility prediction model, the smoking health-data analysis, and ARTE Visit Companion. Pote, StudyFlow, and ARTE have dedicated project pages and build-process records."
-      : "현재 여섯 결과물이 있습니다. Pote, StudyFlow AI, 폐렴 환자 관리 백오피스, 난임 임신 성공 예측, 흡연 여부 건강 데이터 분석, ARTE Visit Companion입니다. Pote, StudyFlow와 ARTE는 상세 페이지와 제작 과정 기록을 함께 볼 수 있습니다.";
+      ? "Eight works are presented: Hemily Health internship, Personal Finance Manager, Pote, StudyFlow AI, the pneumonia back office, the infertility prediction model, the smoking health-data analysis, and ARTE Visit Companion. Pote, StudyFlow, and ARTE have dedicated project pages and build-process records."
+      : "현재 여덟 프로젝트가 있습니다. 해밀리 헬스 인턴십, 개인 자산관리, Pote, StudyFlow AI, 폐렴 환자 관리 백오피스, 난임 임신 성공 예측, 흡연 여부 건강 데이터 분석, ARTE Visit Companion입니다. Pote, StudyFlow와 ARTE는 상세 페이지와 제작 과정 기록을 함께 볼 수 있습니다.";
   }
 
   if (hasAny(text, ["기술", "스킬", "stack", "skill", "python", "파이썬", "fastapi", "react", "next", "docker", "pytorch", "tensorflow", "sql", "vercel"])) {
     return isEnglish
-      ? "The stack spans Python, TypeScript, SQL, Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, CatBoost, LightGBM, ExtraTrees, FastAPI, Docker, Redis, REST API, Vercel, Next.js, React, and Tailwind CSS. The emphasis is on connecting analysis, APIs, and usable interfaces."
-      : "주요 기술은 Python, TypeScript, SQL, Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, CatBoost, LightGBM, ExtraTrees, FastAPI, Docker, Redis, REST API, Vercel, Next.js, React, Tailwind CSS입니다. 분석, API, 사용 가능한 화면을 연결하는 데 초점을 두고 있습니다.";
+      ? "The stack spans Python, TypeScript, SQL, Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, CatBoost, LightGBM, ExtraTrees, FastAPI, PostgreSQL, Docker, Redis, AWS EC2, Nginx, CI/CD, REST API, Vercel, Next.js, React, and Tailwind CSS. The emphasis is on connecting analysis, APIs, and usable interfaces."
+      : "주요 기술은 Python, TypeScript, SQL, Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, CatBoost, LightGBM, ExtraTrees, FastAPI, PostgreSQL, Docker, Redis, AWS EC2, Nginx, CI/CD, REST API, Vercel, Next.js, React, Tailwind CSS입니다. 분석, API, 사용 가능한 화면을 연결하는 데 초점을 두고 있습니다.";
   }
 
   if (hasAny(text, ["교육", "학원", "ai헬스케어", "공부기록", "education", "course", "oz코딩", "오즈코딩"])) {
