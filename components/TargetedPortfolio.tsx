@@ -23,7 +23,7 @@ const languageCopy = {
   kr: {
     heroKicker: "AI SOLUTION · DATA · WEB",
     heroTitle: "데이터와 AI를\n실제 서비스로.",
-    heroBody: "분석과 모델링에서 멈추지 않고, 사용자가 확인하고 움직일 수 있는 화면과 흐름까지 직접 구현합니다.",
+    heroBody: "AI 도구를 활용해 웹 서비스를 만들고, 데이터 분석과 모델링을 사용자 화면과 연결하는 과정을 배우고 있습니다.",
     heroBadge: "AI Solution Builder",
     projectsButton: "프로젝트 보기",
     contactButton: "연락하기",
@@ -57,7 +57,7 @@ const languageCopy = {
   en: {
     heroKicker: "AI SOLUTION · DATA · WEB",
     heroTitle: "Data and AI,\nbuilt into services.",
-    heroBody: "I move beyond analysis and modeling to build the interfaces and flows people can actually use.",
+    heroBody: "I use AI tools to build web services and learn how to connect data analysis and modeling to usable interfaces.",
     heroBadge: "AI Solution Builder",
     projectsButton: "View Projects",
     contactButton: "Contact Me",
@@ -134,7 +134,7 @@ const projectCards = [
     points: { kr: ["암호화 저장", "백업·복원", "CSV 중복 방지", "갤럭시 실기기 검증"], en: ["Encrypted storage", "Backup & restore", "CSV deduplication", "Galaxy device QA"] },
     href: "/projects/personal-finance-manager",
     liveHref: "https://personal-finance-manager-roan.vercel.app/demo",
-    repository: "https://github.com/KimPooh/Personal-Finance-Manager",
+    repository: null,
     processHref: "/projects/personal-finance-manager/process",
     color: "bg-[#E5E7FA]",
     visual: "finance"
@@ -150,7 +150,7 @@ const projectCards = [
     },
     points: { kr: ["한글 입력 처리", "기술 키워드 추출", "프로젝트 연결", "면접 질문 생성"], en: ["Korean input", "Keyword extraction", "Project matching", "Interview prompts"] },
     href: "/studyflow-ai",
-    repository: "https://github.com/KimPooh/StudyFlow-AI",
+    repository: "https://github.com/Gomdori-dev/StudyFlow-AI",
     processHref: "/projects/studyflow-ai/process",
     color: "bg-[#EAF4FF]",
     visual: "studyflow"
@@ -166,7 +166,7 @@ const projectCards = [
     },
     points: { kr: ["FastAPI", "Docker", "Redis Queue", "AI Worker"], en: ["FastAPI", "Docker", "Redis Queue", "AI Worker"] },
     href: "/projects/pneumonia-backoffice-ai-serving",
-    repository: "https://github.com/KimPooh/pneumonia-backoffice-ai-serving",
+    repository: "https://github.com/Gomdori-dev/pneumonia-backoffice-ai-serving",
     processHref: null,
     color: "bg-[#EAF7EF]",
     visual: "pneumonia"
@@ -182,7 +182,7 @@ const projectCards = [
     },
     points: { kr: ["EDA", "OOF AUC", "CatBoost", "LightGBM"], en: ["EDA", "OOF AUC", "CatBoost", "LightGBM"] },
     href: "/projects/infertility-pregnancy-prediction",
-    repository: "https://github.com/KimPooh/infertility-pregnancy-prediction",
+    repository: "https://github.com/Gomdori-dev/infertility-pregnancy-prediction",
     processHref: null,
     color: "bg-[#FFF4DE]",
     visual: "infertility"
@@ -198,7 +198,7 @@ const projectCards = [
     },
     points: { kr: ["Pandas", "Seaborn", "t-test", "ANOVA"], en: ["Pandas", "Seaborn", "t-test", "ANOVA"] },
     href: "/projects/smoking-status-data-analysis",
-    repository: "https://github.com/KimPooh/smoking-health-data-analysis",
+    repository: "https://github.com/Gomdori-dev/smoking-health-data-analysis",
     processHref: null,
     color: "bg-[#F1E8F7]",
     visual: "smoking"
@@ -212,7 +212,7 @@ const projectCards = [
     points: { kr: pote.points.kr.split(" · "), en: pote.points.en.split(" · ") },
     href: "/projects/pote-gallery",
     liveHref: "https://potegallery.com",
-    repository: "https://github.com/KimPooh/pote-gallery",
+    repository: "https://github.com/Gomdori-dev/pote-gallery",
     processHref: "/projects/pote-gallery/process",
     color: "bg-[#F7E6D3]",
     visual: "pote"
@@ -228,7 +228,7 @@ const projectCards = [
     },
     points: { kr: ["Next.js", "Interactive UI", "KR / EN", "Responsive"], en: ["Next.js", "Interactive UI", "KR / EN", "Responsive"] },
     href: "/arte-companion",
-    repository: "https://github.com/KimPooh/arte-visit-companion",
+    repository: "https://github.com/Gomdori-dev/arte-visit-companion",
     processHref: "/projects/arte-visit-companion/process",
     color: "bg-[#FBE7DF]",
     visual: "arte"

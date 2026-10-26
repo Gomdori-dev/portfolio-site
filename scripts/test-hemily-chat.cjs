@@ -13,7 +13,7 @@ const cases = [
   ["해밀리 성능 개선 수치는?", "kr", "", /내부 수치는 공개하지/],
   ["해밀리 RAG도 혼자 만들었어?", "kr", "", /내부 구현은 팀원이 담당/],
   ["그건 운영 배포됐어?", "kr", "Pote는 뭐야?\n해밀리 인턴십은?", /개발 확인과 운영 반영을 구분/],
-  ["Pote는 뭐야?", "kr", "해밀리 인턴십은?", /작가 포털/],
+  ["Pote는 뭐야?", "kr", "해밀리 인턴십은?", /온라인 갤러리/],
   ["Hemily deployment status", "en", "", /Internal architecture.*excluded/],
   ["Hemily performance", "en", "", /Internal metrics are excluded/],
   ["What is the internship?", "en", "", /ongoing Hemily/],

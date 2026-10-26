@@ -164,7 +164,7 @@ export const projects: Project[] = [
         title: "Engineering",
         items: [
           bi("한국어·영어 전환과 작품별 언어 데이터 구조 적용", "Korean/English switching with a per-artwork bilingual data structure"),
-          bi("Vercel 인프라 제약을 확인하고 GitHub Actions 기반 정적 데이터 스냅샷 파이프라인으로 전환", "Identified Vercel infrastructure limits and switched to a GitHub Actions static-snapshot data pipeline"),
+          bi("외부 데이터 갱신과 실패 상황을 고려해 서비스 흐름 개선", "Considered external data updates and failure cases in the service flow"),
           pote.features[2].body,
           pote.features[3].body
         ]

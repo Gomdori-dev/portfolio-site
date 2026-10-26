@@ -16,7 +16,7 @@ export default function StudyFlowProcessPage() {
       title={b("StudyFlow AI 제작 과정", "Building StudyFlow AI")}
       summary={b("흩어진 학습 기록을 기술 키워드, 연결 프로젝트, 면접 질문과 포트폴리오 문장으로 다시 사용할 수 있게 만든 과정입니다.", "The process of turning scattered study notes into reusable technology keywords, linked projects, interview questions, and portfolio-ready sentences.")}
       demoHref="/studyflow-ai"
-      repositoryHref="https://github.com/KimPooh/StudyFlow-AI"
+      repositoryHref="https://github.com/Gomdori-dev/StudyFlow-AI"
       problem={b("수업, 과제, 프로젝트 메모가 서로 다른 곳에 쌓이면서 무엇을 배웠고 어디에 적용했는지 다시 설명하기 어려웠습니다. 제가 실제로 겪은 기록 관리 문제를 해결할 작은 제품이 필요했습니다.", "Class, assignment, and project notes accumulated in different places, making it hard to explain what I learned and where I applied it. I needed a small product to solve that record-management problem I had experienced myself.")}
       goal={b("사용자가 편하게 학습 내용을 적으면 기술 단서를 찾고, 관련 프로젝트와 연결하고, 다음에 답해볼 질문과 사용할 문장을 한 화면에서 확인하도록 만드는 것이 목표였습니다.", "The goal was to let users write learning notes naturally, identify technical clues, connect them to relevant projects, and see questions to answer next alongside useful sentences on one screen.")}
       steps={[

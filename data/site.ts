@@ -10,7 +10,7 @@ export const profile: Profile = {
     "Python 기반 데이터 분석과 머신러닝 모델링을 학습하며, FastAPI 모델 서빙, Docker 기반 배포, Next.js 포트폴리오 구현까지 경험을 확장하고 있습니다.",
   availability: "Digital Experience Ready Portfolio",
   highlights: [
-    "Next.js, TypeScript, Tailwind CSS로 포트폴리오를 직접 구현하고 Vercel에 배포했습니다.",
+    "AI 도구를 활용해 Next.js, TypeScript, Tailwind CSS 기반 포트폴리오를 제작하고 Vercel에 배포했습니다.",
     "FastAPI와 Docker를 활용해 AI 모델을 웹 서비스 흐름에 연결하는 과제를 수행했습니다.",
     "헬스케어 데이터 분석과 머신러닝 모델링 과정을 Case Study 형태로 쉽게 설명했습니다."
   ],
@@ -21,7 +21,7 @@ export const profile: Profile = {
     },
     {
       label: "GitHub",
-      href: "https://github.com/KimPooh"
+      href: "https://github.com/Gomdori-dev"
     }
   ]
 };

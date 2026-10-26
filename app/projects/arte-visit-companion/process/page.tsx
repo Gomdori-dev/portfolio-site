@@ -19,7 +19,7 @@ export default function ArteProcessPage() {
         "The process of building an exhibition companion that goes beyond reading an artwork description, offering questions and a route suited to each visitor's situation."
       )}
       demoHref="/arte-companion"
-      repositoryHref="https://github.com/KimPooh/arte-visit-companion"
+      repositoryHref="https://github.com/Gomdori-dev/arte-visit-companion"
       problem={bi(
         "같은 작품을 보더라도 아이와 함께 온 관람객, 처음 방문한 사람, 외국인, 조용히 감상하고 싶은 사람에게 필요한 안내는 다릅니다. 고정된 설명만으로는 각자의 관람 방식에 맞추기 어렵다고 생각했습니다.",
         "Even looking at the same artwork, a visitor with kids, a first-timer, an international visitor, and someone who wants to view quietly all need different guidance. A single fixed description can't fit every viewing style."

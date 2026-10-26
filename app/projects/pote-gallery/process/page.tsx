@@ -4,7 +4,7 @@ import { pote } from "@/data/pote";
 
 export const metadata: Metadata = {
   title: "Pote 제작 과정 | 김지현 Portfolio",
-  description: "작가 포털·관리자 승인, Gemini 검토 보조, 전시 데이터 자동 갱신과 방문·문의 분석까지 현재 Pote 구현 과정을 정리했습니다."
+  description: "작품 탐색과 문의, AI 도구 활용과 사용성 개선을 중심으로 Pote 제작 과정을 소개합니다."
 };
 
 export default function PoteProcessPage() {

@@ -4,7 +4,7 @@ export const portfolioContact = {
   name: "김지현",
   phone: "010-9533-9522",
   email: "rlarha3288@gmail.com",
-  github: "https://github.com/KimPooh"
+  github: "https://github.com/Gomdori-dev"
 };
 
 export type PortfolioLanguage = "kr" | "en";
