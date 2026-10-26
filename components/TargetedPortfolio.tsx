@@ -472,7 +472,7 @@ export function TargetedPortfolio({ profile, projects }: TargetedPortfolioProps)
             <div className="absolute -left-4 top-10 h-32 w-8 rounded-sm bg-[#C9BDF4] sm:-left-8 sm:w-12" aria-hidden="true" />
             <div className="relative aspect-[4/5] overflow-hidden rounded-md border border-white/10 bg-[#242830]">
               <Image
-                src="/profile.jpg"
+                src="/profile-retouched.png"
                 alt="김지현 프로필 사진"
                 fill
                 priority
