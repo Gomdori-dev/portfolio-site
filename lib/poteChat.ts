@@ -5,6 +5,9 @@ import type { PortfolioLanguage } from "./portfolioChat";
 export function getPoteAnswer(question: string, language: PortfolioLanguage) {
   const text = question.toLowerCase().replace(/[^0-9a-z가-힣]+/g, "");
   const matches = (...words: string[]) => words.some((word) => text.includes(word));
+  if (matches("창업", "도전", "참여", "증명서", "startup", "certificate")) {
+    return `${pote.startupExperience.title[language]} · ${pote.startupExperience.record[language]}. ${pote.startupExperience.summary[language]} ${pote.startupExperience.evidence[language]}.`;
+  }
   if (matches("몇명", "몇점", "몇개", "작가수", "작품수", "howmany", "count", "매출", "sales", "수익", "성과")) {
     return pote.status[language];
   }

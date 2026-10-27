@@ -140,6 +140,15 @@ export default function PoteGalleryPage() {
         </div>
       </section>
 
+      <section id="startup-experience" aria-labelledby="startup-experience-title" className="border-b border-black/10 bg-white/40 py-10 sm:py-12">
+        <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
+          <p className="text-xs font-black text-[#A85A1E]">{pote.startupExperience.record[language]}</p>
+          <h2 id="startup-experience-title" className="mt-3 text-2xl font-black sm:text-3xl">{pote.startupExperience.title[language]}</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-black/65">{pote.startupExperience.summary[language]}</p>
+          <p className="mt-3 text-xs text-black/50">{pote.startupExperience.evidence[language]}</p>
+        </div>
+      </section>
+
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8">
           <p className="text-xs font-black text-[#A85A1E]">{copy.productScope}</p><h2 className="text-center mt-3 text-3xl font-black sm:text-5xl">{copy.productScopeTitle}</h2>

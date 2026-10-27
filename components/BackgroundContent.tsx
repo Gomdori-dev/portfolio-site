@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/SiteHeader";
 import { useLanguage } from "@/lib/language";
+import { pote } from "@/data/pote";
 
 const careerTimeline = [
   {
@@ -167,6 +168,18 @@ export default function BackgroundContent() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="startup-activity-title" className="border-b border-white/10 py-12">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <p className="text-sm font-black text-[#B9E4D0]">{language === "kr" ? "창업 활동" : "Startup Activity"}</p>
+          <h2 id="startup-activity-title" className="mt-3 text-2xl font-black sm:text-3xl">{pote.startupExperience.title[language]}</h2>
+          <p className="mt-3 text-xs font-bold text-[#98A2B3]">{pote.startupExperience.record[language]}</p>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-[#B9C0CD]">{pote.startupExperience.summary[language]}</p>
+          <Link href="/projects/pote-gallery#startup-experience" className="mt-5 inline-flex min-h-11 items-center text-sm font-bold text-[#D8C7FF] underline underline-offset-4">
+            {language === "kr" ? "Pote 프로젝트 보기" : "View the Pote project"}
+          </Link>
         </div>
       </section>
 

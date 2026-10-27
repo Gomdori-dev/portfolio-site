@@ -11,6 +11,12 @@ require.extensions[".ts"] = (module, filename) => {
 };
 const { getPortfolioAnswer } = require("../lib/portfolioChat.ts");
 const cases = [
+  ["모두의 창업 참여 경험은?", "kr", "", /아이디어 도전.*2026\.09\.07/],
+  ["Pote AI 창업 아이디어는?", "kr", "", /AI 기반 미술 판매 플랫폼 아이디어를 제안/],
+  ["도전자 경력증명서는?", "kr", "난임 프로젝트", /2026\.10\.27 발급/],
+  ["Pote startup participation", "en", "", /Startup idea submission.*Sep 7, 2026/],
+  ["그럼 창업 증명서는?", "kr", "Pote는 뭐야?", /도전자 경력증명서/],
+  ["난임 점수는?", "kr", "모두의 창업 참여 경험은?", /0\.74236/],
   ["Pote는 뭐야?", "kr", "", /온라인 갤러리/],
   ["Pote 제작 과정 알려줘", "kr", "", /사용자 문제/],
   ["Pote 자동 승인이야?", "kr", "", /운영자가 공개를 승인/],

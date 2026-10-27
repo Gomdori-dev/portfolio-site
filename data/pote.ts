@@ -1,5 +1,24 @@
 // Public project overview; service code and operational details remain private.
 export const pote = {
+  "startupExperience": {
+    "date": "2026-09-07",
+    "title": {
+      "kr": "모두의 창업 프로젝트 참여",
+      "en": "Modoo Startup Project Participation"
+    },
+    "summary": {
+      "kr": "무명 화가의 작품이 발견되고 구매로 이어질 기회를 넓히기 위해, 작품과 감상자의 취향을 중심으로 연결하는 AI 기반 미술 판매 플랫폼 아이디어를 제안했습니다.",
+      "en": "Proposed an AI-based art sales platform to help lesser-known artists reach potential buyers by connecting artwork with viewers' tastes."
+    },
+    "record": {
+      "kr": "아이디어 도전 · 2026.09.07",
+      "en": "Startup idea submission · Sep 7, 2026"
+    },
+    "evidence": {
+      "kr": "도전자 경력증명서 · 2026.10.27 발급",
+      "en": "Certificate of Startup Experience · Issued Oct 27, 2026"
+    }
+  },
   "reviewedAt": "2026-10-21",
   "liveHref": "https://potegallery.com",
   "description": {

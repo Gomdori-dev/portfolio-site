@@ -28,7 +28,7 @@ export function getPortfolioAnswer(question: string, language: PortfolioLanguage
     ["난임", "임신성공", "catboost", "lightgbm", "oofauc", "이거조"],
     ["폐렴", "xray", "x-ray", "redisqueue", "aiworker", "백오피스"],
     ["흡연", "비흡연", "건강검진", "ttest", "anova", "중성지방"],
-    ["pote", "peto", "포테", "포트는", "포트가", "포트를", "포트의", "포트갤러리", "portgallery", "potegallery", "작품갤러리", "공간미리보기"],
+    ["pote", "peto", "포테", "포트는", "포트가", "포트를", "포트의", "포트갤러리", "portgallery", "potegallery", "작품갤러리", "공간미리보기", "모두의창업", "도전자경력증명서"],
     ["arte", "아르떼", "전시", "관람", "도슨트", "visitcompanion"],
     ["studyflow", "스터디플로우", "학습로그", "학습기록", "면접질문생성"]
   ];
@@ -64,7 +64,7 @@ export function getPortfolioAnswer(question: string, language: PortfolioLanguage
       : "해밀리 헬스 인턴십에서 팀장·공통 백엔드·인프라를 담당합니다. 기획·API·데이터 대조, 인증·관리자 API 개선, 개발 환경 분리, 자동 배포와 정적 자산 전송 최적화를 수행했습니다. 공개 사례는 담당 역할과 확인된 결과를 중심으로 정리했습니다.";
   }
 
-  const isPote = hasAny(subjectText, ["pote", "peto", "포테", "포트는", "포트가", "포트를", "포트의", "포트갤러리", "portgallery", "potegallery", "작품갤러리", "공간미리보기"]);
+  const isPote = hasAny(subjectText, ["pote", "peto", "포테", "포트는", "포트가", "포트를", "포트의", "포트갤러리", "portgallery", "potegallery", "작품갤러리", "공간미리보기", "모두의창업", "도전자경력증명서"]);
   if (isPote) return getPoteAnswer(original, language);
 
   if (hasAny(text, ["안녕", "반가워", "hello", "hi", "hey"])) {
